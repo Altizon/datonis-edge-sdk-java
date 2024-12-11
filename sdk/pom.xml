@@ -8,11 +8,11 @@
   <name>datonis-edge-sdk</name>
   <url>http://maven.apache.org</url>
   <repositories>
-    <repository>
-      <id>spring-milestones</id>
-      <url>https://repo.spring.io/plugins-release</url>
-    </repository>
-  </repositories>
+	  <repository>
+	    <id>central</id>
+	    <url>https://repo.maven.apache.org/maven2</url>
+	  </repository>
+	</repositories>
   <dependencies>
     <dependency>
       <groupId>org.slf4j</groupId>
@@ -23,12 +23,7 @@
       <groupId>com.ning</groupId>
       <artifactId>compress-lzf</artifactId>
       <version>1.0.3</version>
-	</dependency>
-    <dependency>
-      <groupId>org.eclipse.paho</groupId>
-      <artifactId>mqtt-client</artifactId>
-      <version>0.4.0</version>
-    </dependency>
+	  </dependency>
     <dependency>
       <groupId>org.apache.httpcomponents</groupId>
       <artifactId>httpclient</artifactId>
@@ -38,7 +33,7 @@
       <groupId>com.jcraft</groupId>
       <artifactId>jsch</artifactId>
       <version>0.1.54</version>
-	</dependency>
+	  </dependency>
   </dependencies>
   <build>
     <plugins>

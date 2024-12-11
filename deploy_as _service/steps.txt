@@ -1,0 +1,8 @@
+Copy Files
+    Copy the following files from the target folder to the service_build folder:
+        1. log4j.properties from datonis-edge-sdk-java/examples/src/main/resources
+        2. datonis-edge.properties from datonis-edge-sdk-java/examples/src/main/resources
+        3. datonis-edge-examples-5.0.0-jar-with-dependencies.jar from datonis-edge-sdk-java-generic/examples/target (formed after the mvn clean install)
+
+Install the Service
+    Run the install_external_service script as an administrator to complete the setup and installation of the external service.

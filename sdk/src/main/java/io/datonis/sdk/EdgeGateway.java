@@ -2,7 +2,6 @@
 package io.datonis.sdk;
 
 import io.datonis.sdk.communicator.EdgeCommunicator;
-import io.datonis.sdk.communicator.MQTTCommunicator;
 import io.datonis.sdk.communicator.RESTCommunicator;
 import io.datonis.sdk.communicator.SimulateCommunicator;
 import io.datonis.sdk.exception.EdgeGatewayException;
@@ -147,12 +146,6 @@ public class EdgeGateway {
             return new RESTCommunicator(this, timeout.intValue(), apiHost, false, port, proxyHost, proxyPort, proxyUsername, proxyPassword, proxyDomain);
         } else if ("HTTPS".equalsIgnoreCase(protocol)) {
             return new RESTCommunicator(this, timeout.intValue(), apiHost, true, port, proxyHost, proxyPort, proxyUsername, proxyPassword, proxyDomain);
-        } else if ("MQTT".equalsIgnoreCase(protocol)) {
-            isBidirectionalGateway = true;
-            return new MQTTCommunicator(this, timeout.intValue(), apiHost, false, port);
-        } else if ("MQTTS".equalsIgnoreCase(protocol)) {
-            isBidirectionalGateway = true;
-            return new MQTTCommunicator(this, timeout.intValue(), apiHost, true, port);
         } else {
             logger.error("Unsupported protocol: " + protocol + ", messages will not be sent");
             return new SimulateCommunicator();
