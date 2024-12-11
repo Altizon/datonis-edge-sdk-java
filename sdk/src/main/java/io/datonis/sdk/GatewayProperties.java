@@ -50,6 +50,20 @@ public final class GatewayProperties {
     protected static final String SSH_USERNAME = "ssh_username";
     protected static final String PRODUCT_NAME = "product_name";
 
+    public static final String THING_KEY = "thing_key";
+    public static final String THING_NAME = "thing_name";
+    public static final String THING_DESCRIPTION = "thing_description";
+    public static final String NUM_TAG_1 = "num_tag_1";
+    public static final String NUM_TAG_VALUE_1 = "num_tag_value_1";
+    // public static final String NUM_TAG_2 = "num_tag_2";
+    // public static final String NUM_TAG_VALUE_2 = "num_tag_value_2";
+    public static final String STRING_TAG_1 = "string_tag_1";
+    public static final String STRING_TAG_VALUE_1 = "string_tag_value_1";
+    // public static final String STRING_TAG_2 = "string_tag_2";
+    // public static final String STRING_TAG_VALUE_2 = "string_tag_value_2";
+
+    public static final String TRANSMIT_INTERVAL_MSEC = "transmit_interval_milli_secs";
+
     private static JSONObject properties;
 
     static {
@@ -118,6 +132,9 @@ public final class GatewayProperties {
             else
                 properties.put(API_HOST, "api.datonis.io");
         }
+        
+        if (!properties.containsKey(TRANSMIT_INTERVAL_MSEC))
+            properties.put(TRANSMIT_INTERVAL_MSEC, (long)10000);
 
         if (!properties.containsKey(INSTRUCTION_POOL_SIZE)) {
             properties.put(INSTRUCTION_POOL_SIZE, (long)5);
